@@ -1,13 +1,22 @@
-<%= image_tag movie.image.url(:medium) %>
-<div id="<%= dom_id movie %>">
-  <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
-  </p>
+<div class="card text-white bg-success mb-3" style="max-width: 50rem;">
+  <div class="card-body">
+    <%= image_tag movie.image.url(:medium) %>
+      <div id="<%= dom_id movie %>">
+        <p>
+          <strong>Title:</strong>
+          <%= movie.title %>
+        </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= movie.description %>
-  </p>
+        <p>
+          <strong>Description:</strong>
+          <%= movie.description %>
+        </p>
 
+      </div>
+  </div>
 </div>
+
+
+
+
+  

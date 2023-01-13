@@ -12,3 +12,8 @@ User.create(email: "dean@example.com",
 User.create(email: 'john@doe.com',
               :password => "password",
               :password_confirmation => "password")
+
+Category.create(name: "Action")
+Category.create(name: "Comedy")
+Category.create(name: "Thriller")
+Category.create(name: "Love story")

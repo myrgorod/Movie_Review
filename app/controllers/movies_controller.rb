@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_categories
   # GET /movies or /movies.json
   def index
     @movies = Movie.paginate(page: params[:page])
@@ -65,6 +66,10 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.require(:movie).permit(:title, :description, :image)
+      params.require(:movie).permit(:title, :description, :image, :category_id)
+    end
+
+    def set_categories
+      @categories = Category.all.order(:name)
     end
 end

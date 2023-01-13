@@ -7,6 +7,7 @@ ruby "2.7.2"
 gem "rails", "~> 7.0.4"
 gem "paperclip", "~> 6.0.0"
 gem 'bootstrap', '~> 5.0.2'
+gem 'will_paginate'
 
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]

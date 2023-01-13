@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   # GET /movies or /movies.json
   def index
-    @movies = Movie.all
+    @movies = Movie.paginate(page: params[:page])
   end
 
   # GET /movies/1 or /movies/1.json

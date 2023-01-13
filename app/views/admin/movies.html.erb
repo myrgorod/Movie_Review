@@ -1,0 +1,23 @@
+<div class="container">
+<h1 class="text-center">Administrator</h1>
+<%= render 'admin/nav_links' %>
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Movie</th>
+        <th scope="col">User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @movies.each do |movie| %>
+          <tr>
+            <th scope="row"><%= movie.id %></th>
+            <td><%= link_to movie.title, admin_movie_path(movie) %></td>
+            <td><%= movie.user.email %></td>
+          </tr>
+        <%end%>
+    </tbody>
+  </table>
+</div>
+

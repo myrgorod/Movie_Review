@@ -16,10 +16,10 @@
             Dropdown
           </a>
           <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><%= link_to "Admin", admin_path, class: "dropdown-item" if current_user.try(:admin?) %></li>
+            <li><%= link_to "New Movie", new_movie_path, class: "dropdown-item" %></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%></li>            
           </ul>
         </li>        
       </ul>      

@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  authenticated :user, ->(user){user.admin?} do
+  get 'admin', to: 'admin#index'
+  get 'admin/movies'
+  get 'admin/users'
+  get 'admin/show_movie/:id', to: "admin#show_movie", as: 'admin_movie'
+  end
   devise_for :users
   root to: 'movies#index'
   resources :movies

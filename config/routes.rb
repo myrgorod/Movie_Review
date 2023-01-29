@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :reviews
   resources :categories
   authenticated :user, ->(user){user.admin?} do
   get 'admin', to: 'admin#index'
